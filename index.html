@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GanjaGuru - AI Cannabis Expert</title>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KTMTF54T');</script>
+<!-- End Google Tag Manager -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<head>
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The GanjaGuru - Age Verification</title>
+ <meta name="description" content="Verify your age to access The GanjaGuru and PotGrowHub—your ultimate destinations for cannabis culture, wellness, cultivation, and community. Explore products, guides, and elevated experiences powered by marijuana, education, and technology." />
+
+<meta name="keywords" content="GanjaGuru, PotGrowHub, cannabis, marijuana, weed, age verification, THC, CBD, cultivation, growing cannabis, stoner community, cannabis lifestyle, cannabis wellness, dispensary access, budtender, cannabis education, grow guides, cannabis products, legal weed, hemp, 420, cannabis tech, cannabis culture, cannabis strains" />
+
+  <meta name="author" content="The GanjaGuru Team & PotGrowHub" />
+  <meta name="theme-color" content="#00ff88" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- Canonical URLs -->
+  <link rel="canonical" href="https://yourcustomdomain.com/" />
+  <link rel="alternate" hreflang="en" href="https://yourcustomdomain.com/" />
+  <link rel="alternate" hreflang="en" href="https://potgrowhub.com/" />
+<!-- 🔌 Core Bot Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/socket.io/client-dist/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.12.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/tensorflow-models/universal-sentence-encoder"></script> <!-- Sentence Embeddings -->
+<script src="https://cdn.jsdelivr.net/npm/web-worker"></script> <!-- Worker thread support for off-main-thread logic -->
+
+<!-- 🧠 NLP & AI SDKs -->
+<script src="https://cdn.jsdelivr.net/npm/compromise@13.11.3/builds/compromise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rita@2.5.3/dist/rita.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@nlpjs/basic@4.26.0/dist/nlp.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/brain.js@2.0.0-beta.1/dist/brain-browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/natural@5.4.4/lib/natural.min.js"></script> <!-- NLP library for stemming, classification, etc -->
+<script src="https://cdn.jsdelivr.net/npm/franc-min"></script> <!-- Language detection -->
+<script src="https://cdn.jsdelivr.net/npm/langdetect"></script> <!-- Another option for language detection -->
+<script src="https://cdn.jsdelivr.net/npm/compromise-sentences"></script> <!-- Sentence analysis plugin for compromise -->
+
+<!-- 🧩 Utility Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script> <!-- Lighter date library -->
+<script src="https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/umd/uuidv4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/numeral@2.0.6/numeral.min.js"></script> <!-- For number formatting -->
+<script src="https://cdn.jsdelivr.net/npm/validator@13.9.0/validator.min.js"></script> <!-- Data validation -->
+
+<!-- 🎤 Voice Input/Output -->
+<script src="https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/responsivevoice/responsivevoice.js?key=YOUR_KEY_HERE"></script>
+<script src="https://cdn.jsdelivr.net/npm/web-speech-cognitive-services/lib/speech.js"></script> <!-- MS Cognitive Voice (alt to Web Speech API) -->
+<script src="https://cdn.jsdelivr.net/npm/meyda@5.4.0/dist/web/meyda.min.js"></script> <!-- Audio feature extraction -->
+
+<!-- 📡 Real-time Sync / Firebase Alternatives -->
+<script src="https://unpkg.com/supabase@2.39.5/dist/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pocketbase@0.19.0/dist/pocketbase.umd.js"></script> <!-- Lightweight backend in JS -->
+<script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script> <!-- Peer-to-peer, decentralized real-time database -->
+
+<!-- 🔐 Auth & Tokens -->
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/build/jwt-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script> <!-- Password hashing -->
+<script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script> <!-- Encryption utils -->
+
+<!-- 🧪 Machine Learning & Transformers in the Browser -->
+<script src="https://cdn.jsdelivr.net/npm/transformers@4.11.1/dist/transformers.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script> <!-- Run ONNX models in browser -->
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script> <!-- Face detection -->
+<script src="https://cdn.jsdelivr.net/npm/ml5@0.12.2/dist/ml5.min.js"></script> <!-- Beginner-friendly ML wrapper for TF.js -->
+
+<!-- 🧩 Optional UI Helpers (If you want chat UI support) -->
+<script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script> <!-- Tooltips & popovers -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.js"></script> <!-- Nice modal dialogs -->
+<script src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script> <!-- Audio playback -->
+
+<!-- 🎯 Your Bot Logic -->
+<script src="bot.js"></script>
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.title" content="The GanjaGuru - Age Verification" />
+  <meta name="DC.creator" content="The GanjaGuru Team, PotGrowHub" />
+  <meta name="DC.description" content="Verify your age to enter the sacred cannabis-powered spaces of GanjaGuru and PotGrowHub." />
+  <meta name="DC.language" content="en" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="The GanjaGuru - Age Verification" />
+  <meta property="og:description" content="Enter the sacred, cannabis-powered space. Verify your age to begin your journey." />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:url" content="https://yourcustomdomain.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="The GanjaGuru" />
+
+  <!-- PotGrowHub Open Graph -->
+  <meta property="og:title" content="PotGrowHub - Age Verification" />
+  <meta property="og:description" content="Enter PotGrowHub: your all-in-one cannabis cultivation and lifestyle platform. Verify your age to proceed." />
+  <meta property="og:image" content="/potgrowhub-og.jpg" />
+  <meta property="og:url" content="https://potgrowhub.com/" />
+  <meta property="og:site_name" content="PotGrowHub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The GanjaGuru - Age Verification" />
+  <meta name="twitter:description" content="Verify your age to enter The GanjaGuru's mystical cannabis experience." />
+  <meta name="twitter:image" content="/twitter-card.jpg" />
+  <meta name="twitter:site" content="@GanjaGuru" />
+  <meta name="twitter:creator" content="@GanjaGuru" />
+
+  <!-- PotGrowHub Twitter -->
+  <meta name="twitter:title" content="PotGrowHub - Age Verification" />
+  <meta name="twitter:description" content="Age verification required to access PotGrowHub: your cannabis cultivation universe." />
+  <meta name="twitter:image" content="/potgrowhub-twitter.jpg" />
+  <meta name="twitter:site" content="@PotGrowHub" />
+  <meta name="twitter:creator" content="@PotGrowHub" />
+
+  <!-- Favicon & Manifest -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="application-name" content="The GanjaGuru" />
+  <meta name="apple-mobile-web-app-title" content="The GanjaGuru" />
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/styles.css">
+
+<!-- Custom JS -->
+<script src="/js/scripts.js"></script>
+
+<!-- Assets -->
+<img src="/assets/logo.png" alt="GanjaGuru Logo">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Futura&display=swap" rel="stylesheet" />
+
+  <!-- Performance Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MW3MB134F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9MW3MB134F');
+</script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+  <!-- Google Analytics (deferred) -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9MW3MB134F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9MW3MB134F');
+</script>
+
+  <!-- Schema.org JSON-LD (Multi-brand support) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "The GanjaGuru - ",
+    "description": "Enter the sacred space. Age verification for a cannabis-powered journey.",
+    "url": "https://yourcustomdomain.com/",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "The GanjaGuru"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "PotGrowHub - Age Verification",
+    "description": "PotGrowHub: Your gateway to the world of cannabis cultivation and culture. Verify your age to proceed.",
+    "url": "https://potgrowhub.com/",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PotGrowHub"
+    }
+  }
+  </script>
+
+  <!-- PWA Capability -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+  <!-- Style Block (from your original code) -->
+  <style>
+    /* [keep your original CSS here] */
+  </style>
+</head>
+    
+  <style>
+      <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTMTF54T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Orbitron', sans-serif;
+      color: #0f0;
+      overflow-x: hidden;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?cannabis,technology') center/cover no-repeat;
+      position: relative;
+      height: 100vh;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      top: 40%;
+    }
+    .glow {
+      text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+    }
+    .btn-neon {
+      background-color: transparent;
+      color: #0f0;
+      border: 2px solid #0f0;
+      border-radius: 0;
+      transition: 0.3s;
+    }
+    .btn-neon:hover {
+      background-color: #0f0;
+      color: #000;
+    }
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background: rgba(0, 0, 0, 0.9);
+      border: 2px solid #0f0;
+      border-radius: 15px;
+      animation: float 3s ease-in-out infinite;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    .chatbot-header {
+      background-color: #0f0;
+      color: #000;
+      padding: 10px;
+      text-align: center;
+      border-top-left-radius: 13px;
+      border-top-right-radius: 13px;
+    }
+    .chatbot-body {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      color: #0f0;
+    }
+    .chatbot-input {
+      display: flex;
+      padding: 5px;
+      border-top: 1px solid #0f0;
+    }
+    .chatbot-input input {
+      flex: 1;
+      border: none;
+      background: #111;
+      color: #0f0;
+      padding: 5px;
+    }
+    .chatbot-input button {
+      background: #0f0;
+      border: none;
+      color: #000;
+      padding: 5px 10px;
+    }
+    .section {
+      padding: 80px 20px;
+      background-color: #111;
+      border-top: 2px solid #0f0;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .feature {
+      text-align: center;
+      padding: 20px;
+    }
+    .feature i {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content text-white">
+      <h1 class="display-4 glow">Welcome to GanjaGuru</h1>
+      <p class="lead glow">Your AI-powered virtual cannabis expert</p>
+      <a href="#features" class="btn btn-neon mt-3">Get Started</a>
+    </div>
+  </div>
+
+  <section id="features" class="section">
+    <h2 class="section-title glow">Features</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 feature">
+          <i class="bi bi-robot text-success"></i>
+          <h4>AI Cannabis Assistant</h4>
+          <p>24/7 expert advice on strains, growing, products, and more.</p>
+        </div>
+        <div class="col-md-4 feature">
+          <i class="bi bi-globe text-success"></i>
+          <h4>Global Dropshipping</h4>
+          <p>Eco-friendly, inventory-free delivery of cannabis products worldwide.</p>
+        </div>
+        <div class="col-md-4 feature">
+          <i class="bi bi-vr text-success"></i>
+          <h4>Immersive AR/VR</h4>
+          <p>Explore grow rooms, try products, and shop in a gamified cannabis metaverse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="section">
+    <h2 class="section-title glow">How It Works</h2>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3">
+          <h5>1. Ask</h5>
+          <p>Use the AI chatbot to get personalized guidance.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>2. Discover</h5>
+          <p>Explore strain info, accessories, and curated content.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>3. Customize</h5>
+          <p>Design merch, grow rooms, or branded products.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>4. Deliver</h5>
+          <p>Checkout seamlessly with global shipping & tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="chatbot">
+  <!-- Header -->
+  <div class="chatbot-header glow">Ask The GanjaGuru 🌿</div>
+
+  <!-- Chat Body -->
+  <div class="chatbot-body">
+    <p><em>Hello! Ask me anything about cannabis. 🌿</em></p>
+  </div>
+
+  <!-- Input Section -->
+  <div class="chatbot-input">
+    <input type="text" id="chat-input" placeholder="Type your question..." />
+    <button id="send-button">Send</button>
+    <button id="voice-button">🎤</button>
+  </div>
+</div>
+
+<script>
+  // DOM Elements
+  const inputField = document.getElementById('chat-input');
+  const sendButton = document.getElementById('send-button');
+  const voiceButton = document.getElementById('voice-button');
+  const chatBody = document.querySelector('.chatbot-body');
+
+  // Add Event Listeners
+  sendButton.addEventListener('click', handleUserMessage);
+  inputField.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') handleUserMessage();
+  });
+  voiceButton.addEventListener('click', startVoiceInput);
+
+  // Handle User Message
+  function handleUserMessage() {
+    const userMessage = inputField.value.trim();
+    if (userMessage) {
+      // Add user message to chat
+      addMessageToChat('You', userMessage);
+
+      // Guru's response
+      setTimeout(() => {
+        const guruResponse = generateGuruResponse(userMessage);
+        addMessageToChat('Guru', guruResponse);
+      }, 1000);
+
+      // Clear Input Field
+      inputField.value = '';
+    }
+  }
+
+  // Generate Guru Response (Add more keywords and responses here)
+  function generateGuruResponse(message) {
+    const lowerMessage = message.toLowerCase();
+    if (lowerMessage.includes('grow')) {
+      return 'Yo, let’s talk strains and grow tips! 🌱';
+    } else if (lowerMessage.includes('strain')) {
+      return 'Try OG Kush, it’s a classic stoner fave. 💨';
+    } else if (lowerMessage.includes('delivery')) {
+      return 'We got eco-friendly dropshipping worldwide! 🚚';
+    } else {
+      return 'Hit me up with more details, homie. 🔥';
+    }
+  }
+
+  // Add Message to Chat
+  function addMessageToChat(sender, message) {
+    const messageElement = document.createElement('p');
+    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatBody.appendChild(messageElement);
+    chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the bottom
+  }
+
+  // Voice Input
+  function startVoiceInput() {
+    if (!('webkitSpeechRecognition' in window)) {
+      alert('Yo, your browser doesn’t support voice input. Try Chrome!');
+      return;
+    }
+
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.start();
+
+    recognition.onresult = function (event) {
+      const transcript = event.results[0][0].transcript;
+      inputField.value = transcript; // Set the transcript to the input field
+      handleUserMessage(); // Auto-send the message
+    };
+
+    recognition.onerror = function (event) {
+      alert('Voice input error: ' + event.error);
+    };
+  }
+</script>
+
+<style>
+  /* Chatbot Container */
+  .chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #0f0;
+    border-radius: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Header */
+  .chatbot-header {
+    background-color: #0f0;
+    color: #000;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  /* Chat Body */
+  .chatbot-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    color: #0f0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .chatbot-body p {
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .chatbot-body p:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Input Section */
+  .chatbot-input {
+    display: flex;
+    padding: 5px;
+    border-top: 1px solid #0f0;
+    background: #111;
+  }
+
+  .chatbot-input input {
+    flex: 1;
+    border: none;
+    background: #111;
+    color: #0f0;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+
+  .chatbot-input input:focus {
+    outline: none;
+    border: 1px solid #0f0;
+  }
+
+  .chatbot-input button {
+    background: #0f0;
+    border: none;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .chatbot-input button:hover {
+    background: #00c853;
+  }
+
+  /* Voice Button */
+  #voice-button {
+    margin-left: 5px;
+    background: #0f0;
+    border: none;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  #voice-button:hover {
+    background: #00c853;
+  }
+
+  /* Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>
+<section id="onboarding" class="onboarding-section">
+  <div class="container">
+    <div class="onboarding-wrapper">
+      <!-- Progress Bar -->
+      <div class="onboarding-progress">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <!-- Steps Container -->
+      <div id="onboarding-steps" class="onboarding-steps">
+        <!-- Step 1 -->
+        <div class="onboarding-step active" data-step="1">
+          <h2 class="step-title glow">Welcome to GanjaGuru 🌿</h2>
+          <p class="step-desc">Let’s elevate your cannabis journey. We’ll guide you through tailored features and experiences.</p>
+          <button class="btn btn-neon" onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="onboarding-step" data-step="2">
+          <h2 class="step-title glow">Personalized Experience</h2>
+          <p class="step-desc">Tell us what you’re into—growing, strain reviews, or just vibin’. We got you!</p>
+          <button class="btn btn-neon" onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="onboarding-step" data-step="3">
+          <h2 class="step-title glow">AI-Powered Guidance</h2>
+          <p class="step-desc">Our AI assistant will hook you up with the best grow tips, tools, and products.</p>
+          <button class="btn btn-neon" onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="onboarding-step" data-step="4">
+          <h2 class="step-title glow">Ready to Dive In?</h2>
+          <p class="step-desc">You’re all set! Let’s explore the world of GanjaGuru and take it to the next level.</p>
+          <button class="btn btn-neon" onclick="finishOnboarding()">Finish</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Onboarding Section */
+  .onboarding-section {
+    padding: 100px 20px;
+    background-color: #111;
+    color: #0f0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .onboarding-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Progress Bar */
+  .onboarding-progress {
+    width: 100%;
+    height: 10px;
+    background: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #0f0;
+    transition: width 0.5s ease;
+  }
+
+  /* Steps */
+  .onboarding-steps {
+    position: relative;
+  }
+  .onboarding-step {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .onboarding-step.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Titles and Buttons */
+  .step-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .step-desc {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  .btn-neon {
+    padding: 10px 20px;
+    border: 2px solid #0f0;
+    background: transparent;
+    color: #0f0;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  .btn-neon:hover {
+    background: #0f0;
+    color: #000;
+  }
+</style>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 4;
+
+  function updateProgressBar() {
+    const progressBar = document.getElementById("progress-bar");
+    const progress = (currentStep / totalSteps) * 100;
+    progressBar.style.width = `${progress}%`;
+  }
+
+  function nextStep() {
+    const steps = document.querySelectorAll(".onboarding-step");
+    steps[currentStep - 1].classList.remove("active");
+    currentStep++;
+    if (currentStep <= totalSteps) {
+      steps[currentStep - 1].classList.add("active");
+    }
+    updateProgressBar();
+  }
+
+  function finishOnboarding() {
+    alert("Onboarding Complete! Welcome to GanjaGuru!");
+    // Optionally redirect to another page
+    window.location.href = "#";
+  }
+
+  // Initialize Progress Bar
+  updateProgressBar();
+</script>    
+    <section id="account" class="section account-section">
+  <div class="container">
+    <h2 class="section-title glow">Account Management</h2>
+    <div class="row">
+      <!-- Login Form -->
+      <div class="col-md-6">
+        <h3>Login</h3>
+        <form action="/login" method="POST">
+          <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Email" required />
+          </div>
+          <div class="mb-3">
+            <input type="password" name="password" class="form-control" placeholder="Password" required />
+          </div>
+          <button type="submit" class="btn btn-neon">Log In</button>
+        </form>
+      </div>
+      <!-- Sign-Up Form -->
+      <div class="col-md-6">
+        <h3>Sign Up</h3>
+        <form action="/signup" method="POST">
+          <div class="mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Full Name" required />
+          </div>
+          <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Email" required />
+          </div>
+          <div class="mb-3">
+            <input type="password" name="password" class="form-control" placeholder="Password" required />
+          </div>
+          <button type="submit" class="btn btn-neon">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About Us Section -->
+  <section id="about-us" class="section about-us">
+    <h2 class="section-title glow">About Us</h2>
+    <p>Welcome to GanjaGuru, your AI-powered cannabis expert. We aim to empower enthusiasts with knowledge, tools, and tech to elevate their cannabis journey. 🌿</p>
+  </section>
+<section id="ar-vr" class="section ar-vr-section">
+  <div class="container">
+    <h2 class="section-title glow">AR & VR Experiences</h2>
+    <p>Immerse yourself in virtual grow rooms or visualize strain effects with augmented reality.</p>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Virtual Reality</h3>
+        <a href="/vr-experience" class="btn btn-neon">Enter VR</a>
+        <p>Explore gamified grow rooms and dispensaries in 3D.</p>
+      </div>
+      <div class="col-md-6">
+        <h3>Augmented Reality</h3>
+        <a href="/ar-experience" class="btn btn-neon">Try AR</a>
+        <p>Scan QR codes on products to see effects, reviews, and usage tips in real-time.</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aframe@1.2.0/aframe.min.js"></script>
+</section>
+    <section id="3dpod-pod" class="section pod-section">
+  <div class="container">
+    <h2 class="section-title glow">3D Print & Print on Demand</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>3D Print on Demand</h3>
+        <p>Customize and order 3D-printed grow tools, pipe stands, and more.</p>
+        <a href="/3d-print" class="btn btn-neon">Customize 3D Print</a>
+      </div>
+      <div class="col-md-6">
+        <h3>Print on Demand</h3>
+        <p>Design and order T-shirts, hoodies, and other merch with custom cannabis designs.</p>
+        <a href="/print-on-demand" class="btn btn-neon">Design Merch</a>
+      </div>
+    </div>
+  </div>
+</section>
+    <section id="ride-delivery" class="section ride-delivery-section">
+  <div class="container">
+    <h2 class="section-title glow">Ride & Delivery</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Cannabis Delivery</h3>
+        <p>Order your favorite strains and have them delivered to your doorstep.</p>
+        <a href="/delivery" class="btn btn-neon">Order Delivery</a>
+      </div>
+      <div class="col-md-6">
+        <h3>Ride to Dispensary</h3>
+        <p>Book a ride to your nearest dispensary with our partner services.</p>
+        <a href="/ride" class="btn btn-neon">Book a Ride</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+</section>
+    <section id="ecommerce" class="section ecommerce-section">
+  <div class="container">
+    <h2 class="section-title glow">Shop Your Favorites</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="product">
+          <img src="images/product1.jpg" alt="Product 1" class="img-fluid">
+          <h3>Strain Name</h3>
+          <p>$19.99</p>
+          <a href="/product/1" class="btn btn-neon">Buy Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product">
+          <img src="images/product2.jpg" alt="Product 2" class="img-fluid">
+          <h3>Strain Name</h3>
+          <p>$24.99</p>
+          <a href="/product/2" class="btn btn-neon">Buy Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product">
+          <img src="images/product3.jpg" alt="Product 3" class="img-fluid">
+          <h3>Strain Name</h3>
+          <p>$29.99</p>
+          <a href="/product/3" class="btn btn-neon">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+        <!-- Services Section -->
+<section id="services" class="section services-section">
+  <div class="container">
+    <h2 class="section-title glow">Our Services</h2>
+    <div class="row">
+      <!-- Service: Consultation -->
+      <div class="col-md-4 text-center">
+        <i class="bi bi-chat-dots service-icon"></i>
+        <h3>Consultation</h3>
+        <p>Get expert advice on cannabis cultivation, products, and lifestyle optimization.</p>
+      </div>
+      <!-- Service: Assessment -->
+      <div class="col-md-4 text-center">
+        <i class="bi bi-bar-chart service-icon"></i>
+        <h3>Assessment</h3>
+        <p>We analyze your grow setup, product needs, or business goals to maximize efficiency.</p>
+      </div>
+      <!-- Service: Creation -->
+      <div class="col-md-4 text-center">
+        <i class="bi bi-paint-bucket service-icon"></i>
+        <h3>Creation</h3>
+        <p>Custom grow room designs, logo branding, and packaging tailored to your vibe.</p>
+      </div>
+      <!-- Service: Procurement -->
+      <div class="col-md-4 text-center">
+        <i class="bi bi-cart service-icon"></i>
+        <h3>Procurement</h3>
+        <p>Access eco-friendly cannabis products, tools, and accessories for your needs.</p>
+      </div>
+      <!-- Service: AR and VR -->
+      <div class="col-md-4 text-center">
+        <i class="bi bi-vr service-icon"></i>
+        <h3>AR and VR</h3>
+        <p>Step into virtual grow rooms or explore augmented product insights.</p>
+      </div>
+      <!-- Service: 3DPoD and PoD -->
+      <div class="col-md-4 text-center">
+        <i class="bi bi-printer service-icon"></i>
+        <h3>3DPoD and PoD</h3>
+        <p>Print 3D grow accessories or create on-demand merch with custom designs.</p>
+      </div>
+      <!-- Service: E-Commerce -->
+      <div class="col-md-4 text-center">
+        <i class="bi bi-bag service-icon"></i>
+        <h3>E-Commerce</h3>
+        <p>Set up your cannabis store with seamless online shopping experiences.</p>
+      </div>
+      <!-- Service: Package and Ship -->
+      <div class="col-md-4 text-center">
+        <i class="bi bi-box service-icon"></i>
+        <h3>Package and Ship</h3>
+        <p>Eco-conscious packaging and fast shipping to ensure your products arrive perfectly.</p>
+      </div>
+      <!-- Service: Finalize -->
+      <div class="col-md-4 text-center">
+        <i class="bi bi-check-circle service-icon"></i>
+        <h3>Finalize</h3>
+        <p>Complete your projects with quality assurance and guaranteed satisfaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Help and Support Section -->
+<section id="help-support" class="section help-support-section">
+  <div class="container">
+    <h2 class="section-title glow">Help and Support</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Contact Us</h3>
+        <p>Need assistance? Reach out to us via email or phone. Our experts are here to help!</p>
+        <a href="/contact" class="btn btn-neon">Get in Touch</a>
+      </div>
+      <div class="col-md-6">
+        <h3>FAQs</h3>
+        <p>Visit our FAQ section for answers to common questions about our services.</p>
+        <a href="#faq" class="btn btn-neon">View FAQs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ToS / Privacy / Security Section -->
+<section id="legal" class="section legal-section">
+  <div class="container">
+    <h2 class="section-title glow">Legal Information</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Terms of Service</h3>
+        <p>Understand the terms and conditions of using GanjaGuru services.</p>
+        <a href="/tos" class="btn btn-neon">View ToS</a>
+      </div>
+      <div class="col-md-4">
+        <h3>Privacy Policy</h3>
+        <p>Learn how we protect your data and respect your privacy.</p>
+        <a href="/privacy" class="btn btn-neon">View Policy</a>
+      </div>
+      <div class="col-md-4">
+        <h3>Security</h3>
+        <p>Your information is safe with us. See how we ensure your security.</p>
+        <a href="/security" class="btn btn-neon">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="section team-section">
+  <div class="container">
+    <h2 class="section-title glow">Meet The Team</h2>
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <img src="/images/team1.jpg" alt="Team Member 1" class="team-photo img-fluid rounded-circle">
+        <h3>Jane Doe</h3>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="/images/team2.jpg" alt="Team Member 2" class="team-photo img-fluid rounded-circle">
+        <h3>John Green</h3>
+        <p>Lead Grower</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="/images/team3.jpg" alt="Team Member 3" class="team-photo img-fluid rounded-circle">
+        <h3>Sarah Blaze</h3>
+        <p>Marketing Guru</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #0f0;
+  }
+  .team-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+</style>
+</section>    <!-- Testimonials Section -->
+  <section id="testimonials" class="section testimonials">
+    <h2 class="section-title glow">What People Say</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <blockquote>
+            <p>"GanjaGuru changed the way I grow—best AI assistant ever!"</p>
+            <footer>- Alex Green</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote>
+            <p>"The grow tips and AR/VR shopping are next level. Love it!"</p>
+            <footer>- Sarah Bud</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote>
+            <p>"Never buying seeds without consulting GanjaGuru first!"</p>
+            <footer>- Mike Blaze</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact-us" class="section contact-us">
+    <h2 class="section-title glow">Contact Us</h2>
+    <form action="contact.php" method="POST" class="container">
+      <div class="mb-3">
+        <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+      </div>
+      <div class="mb-3">
+        <input type="email" name="email" class="form-control" placeholder="Your Email" required />
+      </div>
+      <div class="mb-3">
+        <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-neon">Submit</button>
+    </form>
+  </section>
+
+  <!-- FAQs Section -->
+  <section id="faq" class="section faq">
+    <h2 class="section-title glow">FAQs</h2>
+    <div class="container">
+      <details>
+        <summary>What is GanjaGuru?</summary>
+        <p>GanjaGuru is an AI-powered virtual assistant for cannabis cultivation, shopping, and education.</p>
+      </details>
+      <details>
+        <summary>Is GanjaGuru free to use?</summary>
+        <p>Yes, GanjaGuru is free for all users! Advanced features may require a subscription in the future.</p>
+      </details>
+      <details>
+        <summary>How does GanjaGuru help growers?</summary>
+        <p>From strain recommendations to grow room setups, GanjaGuru provides personalized advice based on your needs.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 GanjaGuru. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
