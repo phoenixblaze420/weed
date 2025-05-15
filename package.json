@@ -4,14 +4,46 @@
   "description": "The ultimate AI-powered cannabis ecosystem with AR/VR, 3D Printing, AI/ML, and e-commerce integration.",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
-    "build": "webpack --mode production",
-    "test": "jest",
-    "lint": "eslint .",
-    "deploy": "firebase deploy",
-    "3dpod": "node src/3dprint.js"
-  },
+    "start": "node src/server.js", // Start the server
+    "dev": "nodemon src/server.js", // Development mode with live reload
+    "build": "webpack --mode production", // Build for production
+    "test": "jest", // Run tests
+    "lint": "eslint .", // Lint all files
+    "deploy": "firebase deploy", // Deploy to Firebase
+    "3dpod": "node src/3dprint.js", // 3D printing operations
+    "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json", // Analyze bundle size
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"", // Format files
+    "secure": "npm audit --production", // Check for vulnerabilities
+    "start:prod": "NODE_ENV=production node src/server.js", // Start server in production mode
+    "predeploy": "npm run lint && npm run test", // Run checks before deploying
+    "db:migrate": "sequelize db:migrate", // Run database migrations
+    "db:seed": "sequelize db:seed:all", // Seed database with sample data
+    "db:reset": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all", // Reset database
+    "serve": "http-server ./dist", // Serve static files from dist folder
+    "clean": "rimraf dist && mkdir dist", // Clean the dist folder
+    "watch": "webpack --watch", // Watch for changes and rebuild
+    "test:watch": "jest --watch", // Run tests in watch mode
+    "test:coverage": "jest --coverage", // Generate test coverage report
+    "docs": "jsdoc -c jsdoc.json", // Generate project documentation
+    "commit": "git-cz", // Interactive commit using Commitizen
+    "release": "standard-version", // Automate versioning and changelogs
+    "start:debug": "node --inspect src/server.js", // Debug server
+    "fix": "eslint . --fix", // Auto-fix lint errors
+    "prepare": "husky install", // Install Husky hooks
+    "serve:ar": "aframe serve", // Serve AR/VR assets
+    "ai:train": "node src/ai/train.js", // Train AI model
+    "ai:test": "node src/ai/test.js", // Test AI model
+    "stripe:webhook": "stripe listen --forward-to localhost:8080/webhook", // Listen to Stripe webhooks
+    "prod:check": "npm audit && npm outdated", // Check for vulnerabilities and outdated dependencies
+    "e2e": "cypress open", // Open Cypress for end-to-end testing
+    "e2e:run": "cypress run --headless", // Run Cypress tests in headless mode
+    "docker:build": "docker build -t ganja-app .", // Build Docker image
+    "docker:run": "docker run -p 8080:8080 ganja-app", // Run Docker container
+    "graphql:codegen": "graphql-codegen --config codegen.yml", // Generate GraphQL types
+    "update": "npm-check-updates -u && npm install", // Update dependencies
+    "start:local": "dotenv -e .env.local -- node src/server.js", // Start with local .env
+    "env:check": "dotenv -e .env -- printenv" // Validate environment variables
+}
   "author": "phoenixblaze420",
   "license": "MIT",
   "dependencies": {
