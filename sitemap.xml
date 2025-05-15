@@ -3,17 +3,25 @@
   <url>
     <loc>https://ganja-guru.com/index.html</loc>
     <priority>1.0</priority>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://ganja-guru.com/shop.html</loc>
     <priority>0.8</priority>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://ganja-guru.com/customize.html</loc>
     <priority>0.8</priority>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://ganja-guru.com/contact.html</loc>
     <priority>0.5</priority>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>
