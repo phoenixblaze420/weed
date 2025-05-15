@@ -4,46 +4,46 @@
   "description": "The ultimate AI-powered cannabis ecosystem with AR/VR, 3D Printing, AI/ML, and e-commerce integration.",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js", // Start the server
-    "dev": "nodemon src/server.js", // Development mode with live reload
-    "build": "webpack --mode production", // Build for production
-    "test": "jest", // Run tests
-    "lint": "eslint .", // Lint all files
-    "deploy": "firebase deploy", // Deploy to Firebase
-    "3dpod": "node src/3dprint.js", // 3D printing operations
-    "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json", // Analyze bundle size
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"", // Format files
-    "secure": "npm audit --production", // Check for vulnerabilities
-    "start:prod": "NODE_ENV=production node src/server.js", // Start server in production mode
-    "predeploy": "npm run lint && npm run test", // Run checks before deploying
-    "db:migrate": "sequelize db:migrate", // Run database migrations
-    "db:seed": "sequelize db:seed:all", // Seed database with sample data
-    "db:reset": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all", // Reset database
-    "serve": "http-server ./dist", // Serve static files from dist folder
-    "clean": "rimraf dist && mkdir dist", // Clean the dist folder
-    "watch": "webpack --watch", // Watch for changes and rebuild
-    "test:watch": "jest --watch", // Run tests in watch mode
-    "test:coverage": "jest --coverage", // Generate test coverage report
-    "docs": "jsdoc -c jsdoc.json", // Generate project documentation
-    "commit": "git-cz", // Interactive commit using Commitizen
-    "release": "standard-version", // Automate versioning and changelogs
-    "start:debug": "node --inspect src/server.js", // Debug server
-    "fix": "eslint . --fix", // Auto-fix lint errors
-    "prepare": "husky install", // Install Husky hooks
-    "serve:ar": "aframe serve", // Serve AR/VR assets
-    "ai:train": "node src/ai/train.js", // Train AI model
-    "ai:test": "node src/ai/test.js", // Test AI model
-    "stripe:webhook": "stripe listen --forward-to localhost:8080/webhook", // Listen to Stripe webhooks
-    "prod:check": "npm audit && npm outdated", // Check for vulnerabilities and outdated dependencies
-    "e2e": "cypress open", // Open Cypress for end-to-end testing
-    "e2e:run": "cypress run --headless", // Run Cypress tests in headless mode
-    "docker:build": "docker build -t ganja-app .", // Build Docker image
-    "docker:run": "docker run -p 8080:8080 ganja-app", // Run Docker container
-    "graphql:codegen": "graphql-codegen --config codegen.yml", // Generate GraphQL types
-    "update": "npm-check-updates -u && npm install", // Update dependencies
-    "start:local": "dotenv -e .env.local -- node src/server.js", // Start with local .env
-    "env:check": "dotenv -e .env -- printenv" // Validate environment variables
-}
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "lint": "eslint .",
+    "deploy": "firebase deploy",
+    "3dpod": "node src/3dprint.js",
+    "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "secure": "npm audit --production",
+    "start:prod": "NODE_ENV=production node src/server.js",
+    "predeploy": "npm run lint && npm run test",
+    "db:migrate": "sequelize db:migrate",
+    "db:seed": "sequelize db:seed:all",
+    "db:reset": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
+    "serve": "http-server ./dist",
+    "clean": "rimraf dist && mkdir dist",
+    "watch": "webpack --watch",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "docs": "jsdoc -c jsdoc.json",
+    "commit": "git-cz",
+    "release": "standard-version",
+    "start:debug": "node --inspect src/server.js",
+    "fix": "eslint . --fix",
+    "prepare": "husky install",
+    "serve:ar": "aframe serve",
+    "ai:train": "node src/ai/train.js",
+    "ai:test": "node src/ai/test.js",
+    "stripe:webhook": "stripe listen --forward-to localhost:8080/webhook",
+    "prod:check": "npm audit && npm outdated",
+    "e2e": "cypress open",
+    "e2e:run": "cypress run --headless",
+    "docker:build": "docker build -t ganja-app .",
+    "docker:run": "docker run -p 8080:8080 ganja-app",
+    "graphql:codegen": "graphql-codegen --config codegen.yml",
+    "update": "npm-check-updates -u && npm install",
+    "start:local": "dotenv -e .env.local -- node src/server.js",
+    "env:check": "dotenv -e .env -- printenv"
+  },
   "author": "phoenixblaze420",
   "license": "MIT",
   "dependencies": {
@@ -58,18 +58,18 @@
     "react": "^18.2.0",
     "next": "^13.4.0",
     "stripe": "^11.0.0",
-    "mongoose": "^7.2.1", // MongoDB for e-commerce
-    "socket.io": "^4.6.1", // Real-time updates
-    "body-parser": "^1.20.2", // Parse incoming requests
-    "cors": "^2.8.5" // Enable cross-origin requests
+    "mongoose": "^7.2.1",
+    "socket.io": "^4.6.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.22",
     "webpack": "^5.88.1",
     "jest": "^29.6.2",
     "eslint": "^8.51.0",
-    "husky": "^8.0.3", // Git hooks for quality control
-    "prettier": "^3.0.0" // Code formatting
+    "husky": "^8.0.3",
+    "prettier": "^3.0.0"
   },
   "keywords": [
     "weed",
